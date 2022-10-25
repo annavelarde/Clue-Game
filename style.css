@@ -1,0 +1,13 @@
+*
+body {
+    font-family: helvetica;
+    color: #d7d4d4;
+    background-color: rgb(20, 26, 19);
+    margin: 20mm;
+  }
+section{
+  display:grid
+}
+h4,h2,h3,h1,h5 {
+  text-align: center;
+}

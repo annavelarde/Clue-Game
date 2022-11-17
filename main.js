@@ -1,5 +1,6 @@
 import { headerComponent } from "./components/header/header";
 import { mainComponent } from "./components/mainsection/mainsection";
+import "./style.css";
 
 document.getElementById("app").innerHTML = `   
 

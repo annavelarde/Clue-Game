@@ -51,7 +51,7 @@ const weapons = [
     image: "public/images/Weapons/w-dagger.jpg",
   },
   {
-    name: "lead pipe",
+    name: "lead-pipe",
     image: "public/images/Weapons/w-lead-pipe.jpg",
   },
   {
@@ -77,10 +77,10 @@ const rooms = [
     name: "Conservatory",
     image: "public/images/Rooms/r-conservatory.jpg",
   },
-  {
-    name: "Dining Room",
-    image: "public/images/Rooms/r-dining-room.jpg",
-  },
+  // {
+  //   name: "Dining Room",
+  //   image: "public/images/Rooms/r-dining-room.jpg",
+  // },
   {
     name: "Kitchen",
     image: "public/images/Rooms/r-kitchen.jpg",

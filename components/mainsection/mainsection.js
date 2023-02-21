@@ -2,30 +2,35 @@ import { suspects, rooms, weapons } from "../../data.js";
 import "./mainsection.styles.css";
 
 window.clickedSuspect = clickedSuspect;
-function clickedSuspect(suspect) {
-  console.log(
-    " 👉 👉 / clickedSuspect / suspect",
-    suspect.getElementsByClassName("suspectName")[0].textContent,
-    suspect.parentNode.remove(document.getElementById("theSuspect"))
-  );
-}
-
 window.clickedWeapon = clickedWeapon;
-function clickedWeapon(weapon) {
-  console.log(
-    " 👉 👉 / clickedWeapon / weapon",
-    weapon.getElementsByTagName("img")[0].title,
-    weapon.parentNode.remove(document.getElementById("theWeapon"))
-  );
+window.clickedRoom = clickedRoom;
+window.comparison = comparison;
+
+function clickedSuspect(suspect) {
+  // console.log(" 👉 👉 / clickedSuspect / suspect", suspect);
+  const suspectSelected =
+    suspect.getElementsByClassName("suspectName")[0].textContent;
+
+  suspect.parentNode.remove(document.getElementById("theSuspect"));
+  //it's connected with the Conclusion Section
+  document.getElementsByClassName("killer")[0].innerHTML = `${suspectSelected}`;
+  // alert("alertsuspect");
 }
 
-window.clickedRoom = clickedRoom;
+function clickedWeapon(weapon) {
+  // console.log(" 👉 👉 / clickedWeapon / weapon", weapon);
+  const weaponSelected = weapon.getElementsByTagName("img")[0].title;
+
+  weapon.parentNode.remove(document.getElementById("theWeapon"));
+
+  document.getElementsByClassName("weapon")[0].innerHTML = `${weaponSelected}`;
+}
+
 function clickedRoom(room) {
-  console.log(
-    " 👉 👉 / clickedRoom / room",
-    room.getElementsByTagName("img")[0].title,
-    room.parentNode.remove(document.getElementById("theRoom"))
-  );
+  // console.log(" 👉 👉 / clickedRoom / room", room)
+  const roomSelected = room.getElementsByTagName("img")[0].title;
+  room.parentNode.remove(document.getElementById("theRoom"));
+  document.getElementsByClassName("room")[0].innerHTML = `${roomSelected}`;
 }
 
 //3 functions that iterate the array with data.js
@@ -63,6 +68,28 @@ let roomCards = rooms
   })
   .join("");
 
+//getting random data
+const arraySuspects = suspects;
+const arrayRooms = rooms;
+const arrayWeapons = weapons;
+
+const randomSuspect =
+  arraySuspects[Math.floor(Math.random() * arraySuspects.length)].name;
+
+const randomRooms =
+  arrayRooms[Math.floor(Math.random() * arraySuspects.length)].name;
+
+const randomWeapons =
+  arrayWeapons[Math.floor(Math.random() * arrayWeapons.length)].name;
+
+//Comparison of conclusions
+function comparison() {
+  const userSelectedSuspect = document.getElementsByClassName("theory");
+  console.log(" 👉 👉 / comparison / userSelectedSuspect", userSelectedSuspect);
+  //if
+}
+comparison();
+
 export function mainComponent(idSection) {
   idSection.innerHTML = `
 
@@ -70,7 +97,6 @@ export function mainComponent(idSection) {
   <div>
   <h3>⬇ Let's start the game by selecting one of each. Best luck! ⬇</h3>
   </section>
-
     <h2 class="titleSuspect">The Suspects</h2> 
     <section id="theSuspect">
        ${suspectCards}
@@ -87,17 +113,15 @@ export function mainComponent(idSection) {
     </section>
   
   <section class="conclusionSection">
-    <div>
     <h3 class="titleConclusion">⬇ Submit Your Conclusions 👀 ⬇</h3>
-    <div >
-      <div>
-        <p class="killer who">Who?</p> 
-        <p>killed Mrs. Maria with a </p> 
-        <p class="whichWeapon">Weapon?</p> 
-        <p>in</p> 
-        <p class="whichRoom">Room?</p>
+      <div class="theory">
+        <p class="killer who" id="killer2"> Who?</p> 
+        <p>killed Miss. Maria Lopez with a </p> 
+        <p class="weapon whichWeapon">Weapon?</p> 
+        <p>in the</p> 
+        <p class="room whichRoom">Room?</p>
         </div>
-        <button class="button-89" role="button">Submit</button>  
+        <button onclick="" type="button" id="btn" class="close button-89" role="button">Submit</button>  
       </div>
     </div>
   </section>

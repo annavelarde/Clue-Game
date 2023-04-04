@@ -6,8 +6,47 @@ window.clickedWeapon = clickedWeapon;
 window.clickedRoom = clickedRoom;
 window.comparison = comparison;
 
+//Comparison of conclusions
+function comparison() {
+  const userSelectedSuspect =
+    document.getElementsByClassName("killer")[0].innerText;
+  console.log(" 👉 👉 / comparison / userSelectedSuspect", userSelectedSuspect);
+
+  const userSelectedRoom = document.getElementsByClassName("room")[0].innerText;
+  console.log(" 👉 👉 / comparison / userSelectedRoom", userSelectedRoom);
+
+  const userSelectedWeapon =
+    document.getElementsByClassName("weapon")[0].innerText;
+  console.log(" 👉 👉 / comparison / userSelectedWeapon", userSelectedWeapon);
+
+  console.log(" 👉 👉 / comparison / randomSuspect:", randomSuspect);
+  console.log(
+    " 👉 👉 / comparison / userSelectedSuspect:",
+    userSelectedSuspect
+  );
+  // console.log(" 👉 👉 / comparison / randomWeapons:", randomWeapons);
+  // console.log(" 👉 👉 / comparison / userSelectedWeapon:", userSelectedWeapon);
+  // console.log(" 👉 👉 / comparison / randomRooms:", randomRooms);
+  // console.log(" 👉 👉 / comparison / userSelectedRoom:", userSelectedRoom);
+
+  if (
+    randomSuspect === userSelectedSuspect &&
+    randomWeapons === userSelectedWeapon &&
+    randomRooms === userSelectedRoom
+  ) {
+    alert("yuhuuu, you are a super star");
+    window.location.reload();
+  } else {
+    alert("sorry you didn't get it.");
+    alert(`The real killer is ${randomSuspect}`);
+    window.location.reload();
+  }
+}
+
+// comparison();
+
 function clickedSuspect(suspect) {
-  // console.log(" 👉 👉 / clickedSuspect / suspect", suspect);
+  console.log(" 👉 👉 / clickedSuspect / suspect", suspect);
   const suspectSelected =
     suspect.getElementsByClassName("suspectName")[0].textContent;
 
@@ -15,22 +54,25 @@ function clickedSuspect(suspect) {
   //it's connected with the Conclusion Section
   document.getElementsByClassName("killer")[0].innerHTML = `${suspectSelected}`;
   // alert("alertsuspect");
+  console.log(" 👉 👉 / clickedSuspect / suspectSelected:", suspectSelected);
 }
 
 function clickedWeapon(weapon) {
-  // console.log(" 👉 👉 / clickedWeapon / weapon", weapon);
+  console.log(" 👉 👉 / clickedWeapon / weapon", weapon);
   const weaponSelected = weapon.getElementsByTagName("img")[0].title;
 
   weapon.parentNode.remove(document.getElementById("theWeapon"));
 
   document.getElementsByClassName("weapon")[0].innerHTML = `${weaponSelected}`;
+  console.log(" 👉 👉 / clickedWeapon / weaponSelected:", weaponSelected);
 }
 
 function clickedRoom(room) {
-  // console.log(" 👉 👉 / clickedRoom / room", room)
+  console.log(" 👉 👉 / clickedRoom / room", room);
   const roomSelected = room.getElementsByTagName("img")[0].title;
   room.parentNode.remove(document.getElementById("theRoom"));
   document.getElementsByClassName("room")[0].innerHTML = `${roomSelected}`;
+  console.log(" 👉 👉 / clickedRoom / roomSelected:", roomSelected);
 }
 
 //3 functions that iterate the array with data.js
@@ -68,7 +110,7 @@ let roomCards = rooms
   })
   .join("");
 
-//getting random data
+//getting random data (game)
 const arraySuspects = suspects;
 const arrayRooms = rooms;
 const arrayWeapons = weapons;
@@ -82,17 +124,11 @@ const randomRooms =
 const randomWeapons =
   arrayWeapons[Math.floor(Math.random() * arrayWeapons.length)].name;
 
-//Comparison of conclusions
-function comparison() {
-  const userSelectedSuspect = document.getElementsByClassName("theory");
-  console.log(" 👉 👉 / comparison / userSelectedSuspect", userSelectedSuspect);
-  //if
-}
-comparison();
+//Random Game Enigma
+console.log({ randomSuspect, randomRooms, randomWeapons });
 
 export function mainComponent(idSection) {
   idSection.innerHTML = `
-
   <section>
   <div>
   <h3>⬇ Let's start the game by selecting one of each. Best luck! ⬇</h3>
@@ -121,10 +157,9 @@ export function mainComponent(idSection) {
         <p>in the</p> 
         <p class="room whichRoom">Room?</p>
         </div>
-        <button onclick="" type="button" id="btn" class="close button-89" role="button">Submit</button>  
+        <button onclick="comparison()" id="btn" class="close button-89" role="button">Submit</button>  
       </div>
     </div>
   </section>
- 
   `;
 }

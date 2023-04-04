@@ -34,11 +34,13 @@ function comparison() {
     randomWeapons === userSelectedWeapon &&
     randomRooms === userSelectedRoom
   ) {
-    alert("yuhuuu, you are a super star");
+    alert("Yuhuuu, you are a super star ⭐!");
     window.location.reload();
   } else {
-    alert("sorry you didn't get it.");
-    alert(`The real killer is ${randomSuspect}`);
+    alert("Sorry, you didn't get it!");
+    alert(
+      `The real killer is ${randomSuspect} that used a ${randomWeapons} to kill Miss. Maria Lopen in the ${randomRooms} 😱!`
+    );
     window.location.reload();
   }
 }
@@ -149,7 +151,8 @@ export function mainComponent(idSection) {
     </section>
   
   <section class="conclusionSection">
-    <h3 class="titleConclusion">⬇ Submit Your Conclusions 👀 ⬇</h3>
+  <div>
+    <h3 class="titleConclusion">⬇ Submit Conclusions 👀 ⬇</h3>
       <div class="theory">
         <p class="killer who" id="killer2"> Who?</p> 
         <p>killed Miss. Maria Lopez with a </p> 
@@ -159,6 +162,7 @@ export function mainComponent(idSection) {
         </div>
         <button onclick="comparison()" id="btn" class="close button-89" role="button">Submit</button>  
       </div>
+    </div>
     </div>
   </section>
   `;

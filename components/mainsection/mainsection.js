@@ -151,7 +151,7 @@ export function mainComponent(idSection) {
     </section>
   </div> 
   <section class="conclusionSection">
-  <div> 
+  <div class="conclusiondiv"> 
     <h3 class="titleConclusion">⬇ Submit Conclusions 👀 ⬇</h3>
       <div class="theory">
         <p class="killer who" id="killer2"> Who?</p> 

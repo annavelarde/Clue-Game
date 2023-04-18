@@ -45,8 +45,8 @@ h3 {
 }
 
 .conclusionSection{
-  margin-right: 400px;
-  margin-left: 400px;
+  margin-right: 100px;
+  margin-left: 100px;
   margin-bottom: 40px;
   margin-top: 50px;
   border-radius: 4px;
@@ -61,16 +61,16 @@ font-size: 13px;
 }
 
 .titleSuspect{
-  margin-right: 200px;
-  margin-left: 200px;
+  margin-right: 100px;
+  margin-left: 100px;
   padding: 5px;
   background: #752f18;
   color: #cbc3bf;
   border-radius: 5px;
 }
 .titleWeapon{
-  margin-right: 200px;
-  margin-left: 200px;
+  margin-right: 100px;
+  margin-left: 100px;
   padding: 5px;
   background: #752f18;
   color: #cbc3bf;
@@ -78,8 +78,8 @@ font-size: 13px;
 }
 
 .titleRoom{
-  margin-right: 200px;
-  margin-left: 200px;
+  margin-right: 100px;
+  margin-left: 100px;
   padding: 5px;
   background: #752f18;
   color: #cbc3bf;

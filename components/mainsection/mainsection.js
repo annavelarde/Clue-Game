@@ -132,9 +132,9 @@ console.log({ randomSuspect, randomRooms, randomWeapons });
 export function mainComponent(idSection) {
   idSection.innerHTML = `
   <section>
-  <div>
   <h3>⬇ Let's start the game by selecting one of each. Best luck! ⬇</h3>
   </section>
+  <div> 
     <h2 class="titleSuspect">The Suspects</h2> 
     <section id="theSuspect">
        ${suspectCards}
@@ -149,9 +149,9 @@ export function mainComponent(idSection) {
     <section id="theRoom">
       ${roomCards}
     </section>
-  
+  </div> 
   <section class="conclusionSection">
-  <div>
+  <div> 
     <h3 class="titleConclusion">⬇ Submit Conclusions 👀 ⬇</h3>
       <div class="theory">
         <p class="killer who" id="killer2"> Who?</p> 

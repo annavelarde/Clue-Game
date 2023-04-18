@@ -7,10 +7,7 @@ export function headerComponent(idHeader) {
       <h1>THE 'CLUE GAME' 🕵🏽‍♂️</h1>
       <h4>Become a detective and solve the murder mystery in each occasion </h4>
     </div>
-      <div class="mainText">Clue is the classic detective game and is different every time you play. If you can collect the right clues and
-        make the right deductions, you'll solve the mystery and win. Who did it? Where? Which weapon? As you search the
-        mansion's nine rooms and secret passages, be on the lookout for the murderous suspects and the deadly
-        weapons.
+      <div class="mainText">Clue is a timeless detective game that provides a unique experience each time. By making deductions, you will successfully solve the mystery and emerge as the winner. The game challenges you to uncover three critical pieces of information: who committed the crime, where it happened, and which weapon was used. Pay close attention to the suspects' movements and the dangerous weapons at hand.
       </div> 
     <section>`;
 }

@@ -45,12 +45,11 @@ h3 {
 }
 
 .conclusionSection{
-  margin-right: 70px;
-  margin-left: 70px;
+  margin-right: 50px;
+  margin-left: 50px;
   margin-bottom: 40px;
   margin-top: 50px;
   border-radius: 4px;
-  background-color: #752f18;
   text-align: center;
   padding-bottom: 20px;
 }
@@ -104,9 +103,13 @@ font-size: 13px;
 .titleConclusion{
   color: #e9ede3a7;
   font-size: 25px;
+  padding-right: 100px;
+  padding-left: 100px;
 }
 
 .conclusiondiv{
   margin-right: 200px;
   margin-left: 200px;
+  background-color: #752f18;
+  padding-bottom: 30px;
 }
